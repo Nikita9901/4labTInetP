@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+    <script>
+        function display() {
+            parent.display(document);
+        }
+
+        window.onblur = function () {
+            parent.resetDisplay(document);
+        }
+    </script>
+</head>
+<body onfocus="display(this)" >
+    <p>
+        <h2>Применение JSON.</h2>
+        <p style="text-align: justify; padding: 10px; font-size: 10px;">
+            JSON является строковым представлением данных; он выглядит как обычный объект JavaScript, но может быть использован только для представления
+            подмножества данных, из которых состоит обычный объект JavaScript. Например, JSON не может представлять функции или объекты. Вот пример строки
+            JSON, обратите внимание, что все свойства в кавычках:
+            { "people" : [ { "name" : "Бен", "url" : "http://benalman.com", "bio" : "Я делаю превосходные сайты, полезные плагины jQuery и играю
+            Важно помнить, что JSON является строковым представлением объекта — перед работой строка должна быть преобразована в действительный объект
+            JavaScript. Когда вы работаете с ответом JSON в XHR, то jQuery заботится об этой задаче за вас, но важно понимать разницу между JSON-представлением
+            объекта и самим объектом.
+        <p>
+    </p>
+</body>
+</html>

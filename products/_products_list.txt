@@ -1,0 +1,4 @@
+001#Яблоко#apple1.txt
+002#Банан#banana1.txt
+003#Груша#pear1.txt
+004#Огурец#cucumber1.txt

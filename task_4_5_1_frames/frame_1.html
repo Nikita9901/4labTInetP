@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <script>
+        function display() {
+            parent.display(document);
+        }
+        window.onblur = function () {
+            parent.resetDisplay(document);
+        }
+    </script>
+</head>
+<body onfocus="display(this)" >
+    <p>
+        <h2><i>JavaScript:</i></h2>
+        <p style="text-align: justify; padding: 10px; font-size: 10px;">
+            <i>&nbsp;&nbsp;&nbsp;&nbsp;JavaScript</i> — мультипарадигменный язык программирования. Поддерживает объектно-
+            ориентированный, императивный и функциональный стили. Является реализацией
+            языка ECMAScript
+             <br/> <br/>
+            <i>&nbsp;&nbsp;&nbsp;&nbsp;ECMAScript</i> — это встраиваемый расширяемый не имеющий средств ввода-вывода язык
+            программирования, используемый в качестве основы для построения других скриптовых языков.
+            Стандартизирован международной организацией ECMA в спецификации ECMA-262. Расширения
+            языка: JavaScript, JScript и ActionScript.
+        <p>
+    </p>
+</body>
+</html>

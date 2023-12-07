@@ -1,0 +1,67 @@
+<HTML>
+    <HEAD>
+       <TITLE>Задание 5.3</TITLE>
+        <script>
+            function light_logo(ii, spd)//проявление картинки для данного типа перехода
+            {
+                ii=Number(ii);
+                spd = Number(spd);
+                if(isNaN(spd) || isNaN(ii) || spd < 0 || spd > 100 || ii%1 != 0 || ii > 23 || ii < 0){
+                    alert('Введите корректные значения');
+                    return
+                }
+                ImageLogo.filters.revealtrans.Apply();
+                ImageLogo.filters.revealtrans.transition=ii;
+                ImageLogo.filters.revealtrans.duration=spd;
+                ImageLogo.style.visibility="visible";
+                ImageLogo.filters.revealtrans.play(); 
+            }
+        </script>
+        <style>
+            img{
+                width: 200px;
+            }
+            body{
+                background-color: rgb(29, 22, 22);
+                color: white;
+            }
+            label{
+                display: inline-block;
+                width: 190px;
+            }
+
+            .butt{
+                position: relative;
+                left: 120px;
+            }
+
+            img{
+                position: relative;
+                left: 60px;
+            }
+        </style>
+    </HEAD>
+    <BODY>
+        <nav>
+            <a href="../task_4_5_1.html" target="_top">Задание 5.1</a> |
+            <a href="../task_4_5_2.html" target="_top">Задание 5.2</a> |
+            <a href="../task_4_5_3.html" target="_top">Задание 5.3</a> |
+            <a href="../task_4_5_4.html" target="_top">Задание 5.4</a> |
+            <a href="../task_4_5_5.html" target="_top">Задание 5.5</a> |
+        </nav>
+        <br>
+
+        <H3 >Эффекты перехода  revealtrans().</H3>
+        <IMG ID=ImageLogo SRC="images/pig.png" style="filter:revealtrans();">
+        <br><br><br>
+        <form name="frm" >
+            <label>Тип перехода(0 - 23):</label>
+            <input name="trns" TYPE="text" placeholder="от 0 до 23" value="3">
+            <br><br>
+            <label>Скорость перехода(0-100):</label>
+            <input name="spd" TYPE="text" placeholder="от 0 до 100" value=5>
+            <br><br>
+            <input class="butt" type="button" value="Применить" onClick='ImageLogo.style.visibility="hidden"; light_logo(frm.trns.value, frm.spd.value);' >
+        </form>
+    </BODY>
+ </HTML>

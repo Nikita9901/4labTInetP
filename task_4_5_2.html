@@ -1,0 +1,55 @@
+<HTML>
+    <HEAD>
+        <TITLE>Задание 5.2</TITLE>
+        <meta charset="utf-8" />
+        <style>
+            img{
+                width: 200px;
+            }
+        </style>
+        <script>
+            function tstFilter1(){
+                ImageLogo1.filters.light.addPoint(100,100,50,250,250,250,100);
+            }
+        </script>
+    </HEAD>
+    <BODY onLoad="tstFilter1()">
+        <nav>
+            <a href="../task_4_5_1.html" target="_top">Задание 5.1</a> |
+            <a href="../task_4_5_2.html" target="_top">Задание 5.2</a> |
+            <a href="../task_4_5_3.html" target="_top">Задание 5.3</a> |
+            <a href="../task_4_5_4.html" target="_top">Задание 5.4</a> |
+            <a href="../task_4_5_5.html" target="_top">Задание 5.5</a> |
+        </nav>
+        <br>
+
+        <b>Эффект применения фильтра flipV()</b><br>
+        <table>
+            <tr>
+                <td>
+                    <b>До:</b><br>
+                    <img ID="ImageLogo" SRC="images/cat.png" >
+                </td>
+                <td>
+                    <b>После:</b><br>
+                    <img id="ImageLogo" SRC="images/cat.png" style="transform: scaleY(-1); filter:flipV;">
+                </td>
+            </tr>
+        </table>
+        <br><br>
+        <b>Применение фильтров light() и invert()</b><br>
+        <table>
+            <tr>
+                <td>
+                    <b>light:</b><br>
+                    <img ID=ImageLogo1 SRC="images/cat.png" style="filter:light(); ">
+                </td>
+                <td>
+                    <b>invert:</b><br>
+                    <img SRC="images/cat.png" style="filter:invert();">
+                </td>
+            </tr>
+        </table>
+   
+    </BODY>
+ </HTML>

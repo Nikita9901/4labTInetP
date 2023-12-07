@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 5.4</title>
+    <style type="text/css">
+        #clock { font-size: 200%; font-weight: bold }
+    </style>
+    <script>
+        function lead0(val) {
+            return (val < 10) ? "0" + val.toString() : val;
+        }
+
+        function lead000(val) {
+            return ('000' + val).slice(-3);
+        }
+
+        
+
+        var sliceAmount = 5;
+
+        function changeSlicePlus(){
+            sliceAmount++;
+        }
+
+        function changeSliceMinus(){
+            if(sliceAmount < 2) return 1
+            sliceAmount--;
+        }
+
+        function buildTime() {
+            var time = new Date();
+            var h = time.getHours();
+            var m = time.getMinutes();
+            var s = time.getSeconds();
+            var ms = time.getMilliseconds();
+            var mcs = Math.floor(Math.random() * 99999);
+            //var mcsString = String(window.performance.now());
+            // console.log(mcsString)
+            //var mcs = (mcsString.indexOf('.') !== -1) ? parseInt(mcsString.split('.')[1].slice(0, sliceAmount)) : 0;
+            return lead0(h) + ":" + lead0(m) + ":" + lead0(s) + ":" + lead000(ms) + "." + mcs;
+        }
+
+        function tick() {
+            document.getElementById('clock').innerText = buildTime();
+            requestAnimationFrame(tick);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            tick();
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="../task_4_5_1.html" target="_top">Задание 5.1</a> |
+        <a href="../task_4_5_2.html" target="_top">Задание 5.2</a> |
+        <a href="../task_4_5_3.html" target="_top">Задание 5.3</a> |
+        <a href="../task_4_5_4.html" target="_top">Задание 5.4</a> |
+        <a href="../task_4_5_5.html" target="_top">Задание 5.5</a> |
+    </nav>
+    <p>
+        <b><big>Текущее время:</big></b>
+        <span id="clock"></span>
+    </p>
+    <br>
+    <!-- <input type="button" value="+" onclick="changeSlicePlus()">
+    <input type="button" value="-" onclick="changeSliceMinus()"> -->
+</body>
+</html>

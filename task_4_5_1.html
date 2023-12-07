@@ -1,0 +1,35 @@
+<HTML>
+    <HEAD>
+        <TITLE>Задание 5.1</TITLE>
+        <SCRIPT LANGUAGE="JavaScript">
+            function display(f) {
+                let paragraphs = f.querySelectorAll("p");
+                let h2 = f.querySelector("h2");
+
+                paragraphs[1].style.fontSize = "20px"; 
+
+                h2.style.color = "red";
+            }
+
+            function resetDisplay(f) {
+                let paragraphs = f.querySelectorAll("p");
+                let h2 = f.querySelector("h2");
+
+                paragraphs[1].style.fontSize = "10px"; 
+
+                h2.style.color = "black";
+            }
+        </SCRIPT>
+    </HEAD>
+    <FRAMESET rows="45%, 45%, 10%">
+        <frameset cols="50%, 50%">
+            <FRAME SRC="task_4_5_1_frames/frame_1.html" NORESIZE SCROLLING="No"></FRAME>
+            <FRAME SRC="task_4_5_1_frames/frame_2.html" NORESIZE SCROLLING="No"></FRAME>
+        </frameset>
+        <frameset cols="50%, 50%">
+            <FRAME SRC="task_4_5_1_frames/frame_3.html" NORESIZE SCROLLING="No"></FRAME>
+            <FRAME SRC="task_4_5_1_frames/frame_4.html" NORESIZE SCROLLING="No"></FRAME>
+        </frameset>
+        <FRAME SRC="task_4_5_1_frames/frame_5.html" NORESIZE SCROLLING="No"></FRAME>
+    </FRAMESET>
+ </HTML>
