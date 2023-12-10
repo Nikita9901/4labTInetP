@@ -1,67 +1,77 @@
 <HTML>
     <HEAD>
        <TITLE>Задание 5.3</TITLE>
+        <meta charset="utf-8">
         <script>
-            function light_logo(ii, spd)//проявление картинки для данного типа перехода
+            function light_logo(spd, func)
             {
-                ii=Number(ii);
-                spd = Number(spd);
-                if(isNaN(spd) || isNaN(ii) || spd < 0 || spd > 100 || ii%1 != 0 || ii > 23 || ii < 0){
-                    alert('Введите корректные значения');
-                    return
+                var ImageLogo = document.getElementById('ImageLogo');
+                var button = document.getElementById('butt');
+                spd = parseInt(spd, 10);
+                if(isNaN(spd) || spd < 0 || !func){
+                    alert('Введите корректное значение');
+                    return;
                 }
-                ImageLogo.filters.revealtrans.Apply();
-                ImageLogo.filters.revealtrans.transition=ii;
-                ImageLogo.filters.revealtrans.duration=spd;
-                ImageLogo.style.visibility="visible";
-                ImageLogo.filters.revealtrans.play(); 
+                ImageLogo.style.opacity = '0';
+                ImageLogo.style.transition = "opacity " + spd + "s " + func;
+                button.disabled = true;
+                setTimeout(() => {
+                    button.disabled = false;
+                    ImageLogo.style.transition = '';
+                    ImageLogo.style.opacity = '1';
+                }, spd*1000)
             }
         </script>
         <style>
-            img{
-                width: 200px;
-            }
             body{
-                background-color: rgb(29, 22, 22);
-                color: white;
+                background-color: rgb(240, 226, 189);
+                color: black;
+                padding-left: 25px;
             }
             label{
                 display: inline-block;
                 width: 190px;
             }
 
-            .butt{
-                position: relative;
-                left: 120px;
-            }
-
             img{
-                position: relative;
-                left: 60px;
+                width: 400px;
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                max-width: 200px;
+                gap: 25px;
             }
         </style>
     </HEAD>
     <BODY>
         <nav>
-            <a href="../task_4_5_1.html" target="_top">Задание 5.1</a> |
-            <a href="../task_4_5_2.html" target="_top">Задание 5.2</a> |
-            <a href="../task_4_5_3.html" target="_top">Задание 5.3</a> |
-            <a href="../task_4_5_4.html" target="_top">Задание 5.4</a> |
-            <a href="../task_4_5_5.html" target="_top">Задание 5.5</a> |
+            <a href="./task_4_5_1.html" target="_top">Задание 5.1</a> |
+            <a href="./task_4_5_2.html" target="_top">Задание 5.2</a> |
+            <a href="./task_4_5_3.html" target="_top">Задание 5.3</a> |
+            <a href="./task_4_5_4.html" target="_top">Задание 5.4</a> |
+            <a href="./task_4_5_5.html" target="_top">Задание 5.5</a> |
         </nav>
         <br>
 
-        <H3 >Эффекты перехода  revealtrans().</H3>
-        <IMG ID=ImageLogo SRC="images/pig.png" style="filter:revealtrans();">
+        <H3 >Эффекты перехода.</H3>
+        <IMG ID=ImageLogo SRC="images/mem.jpg">
         <br><br><br>
         <form name="frm" >
-            <label>Тип перехода(0 - 23):</label>
-            <input name="trns" TYPE="text" placeholder="от 0 до 23" value="3">
+            <label for="select">Тип перехода:</label>
+            <select name="func" id="select">
+                <option>ease</option>
+                <option>ease-out</option>
+                <option>ease-in</option>
+                <option>ease-in-out</option>
+                <option>linear</option>
+                <option>step-start</option>
+                <option>step-end</option>
+            </select>
+            <label>Длительность перехода:</label>
+            <input name="spd" TYPE="text" placeholder="" value=5>
             <br><br>
-            <label>Скорость перехода(0-100):</label>
-            <input name="spd" TYPE="text" placeholder="от 0 до 100" value=5>
-            <br><br>
-            <input class="butt" type="button" value="Применить" onClick='ImageLogo.style.visibility="hidden"; light_logo(frm.trns.value, frm.spd.value);' >
+            <input id="butt" class="butt" type="button" value="Применить" onClick='light_logo(frm.spd.value, frm.func.value);' >
         </form>
     </BODY>
  </HTML>

@@ -4,34 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3</title>
-    <script>
-        function display() {
-            parent.display(document);
-        }
-
-        window.onblur = function () {
-            parent.resetDisplay(document);
-        }
-    </script>
+    <script src="script.js"></script>
 </head>
-<body onfocus="display(this)" >
+<body onfocus="display()" >
     <p>
         <h2>Возможности DHTML:</h2>
         <p style="text-align: justify; padding: 10px; font-size: 10px;">
-            В динамическом HTML различают три типа окон:
-        </p>
-            <ul style="text-align: justify; padding: 10px; margin-left: 10px; font-size: 10px;">
-                <li>
-                    немодальные окна;
-                </li>
-                <li>
-                    модальные окна;
-                </li>
-                <li>
-                    наборы фреймов.
-                </li>
-            </ul>
-        <p style="text-align: justify; padding: 10px; font-size: 10px;">
+            В динамическом HTML различают три типа окон: немодальные окна; модальные окна; наборы фреймов.
             Немодальные окна (или просто «окна»), это окно экземпляра браузера, в котором открываются
             HTML-документы. Модальными называются окна, которые требуют ответа от пользователя для
             возобновления взаимодействия с браузером. Наборы фреймов рассматривались в подразделе 2.7. В
