@@ -1,4 +1,4 @@
-001#Яблоко#apple1.txt
-002#Банан#banana1.txt
-003#Груша#pear1.txt
-004#Огурец#cucumber1.txt
+001#Айфон 14#iphone.txt
+002#Пиксель 7#pixel.txt
+003#Ксяоми 13 про#xiaomi.txt
+004#Самсунг с23+#samsung.txt

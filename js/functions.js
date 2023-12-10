@@ -34,7 +34,7 @@ function displayProductList() {
 
     // Создаем заголовок таблицы
     let caption = document.createElement('caption');
-    caption.innerHTML = '<h3>Список товаров</h3>';
+    caption.innerHTML = '<h3>Список телефонов</h3>';
     table.appendChild(caption);
 
     // Создаем заголовок таблицы
@@ -61,20 +61,18 @@ function displayProductList() {
         row.appendChild(codeCell);
 
         let nameCell = document.createElement('td');
-        let nameLink = document.createElement('a');
-        nameLink.href = '#';
-        nameLink.textContent = product.name;
-
-        nameLink.addEventListener('click', function (event) {
-            event.preventDefault();
-            showProductDetails(product);
-        });
-
-        nameCell.appendChild(nameLink);
+        nameCell.textContent = product.name;
         row.appendChild(nameCell);
 
         let fileCell = document.createElement('td');
-        fileCell.textContent = product.descriptionFile;
+        let fileLink = document.createElement('a');
+        fileLink.href = '#';
+        fileLink.textContent = product.descriptionFile;
+        fileLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            showProductDetails(product);
+        });
+        fileCell.appendChild(fileLink)
         row.appendChild(fileCell);
 
         // Добавляем строку в таблицу
@@ -115,7 +113,7 @@ function showProductDetails(product) {
         const goods = details.map(detail=>`
         <p><b>Цена:</b> ${detail.price}
         <b>Цвет:</b> ${detail.color}
-        <b>Страна:</b> ${detail.country}</p>
+        <b>Поставщик:</b> ${detail.country}</p>
         `).join('')
         let content = `
         <!DOCTYPE html>
@@ -129,7 +127,6 @@ function showProductDetails(product) {
         <body>
             <h1>${name}</h1>
             ${goods}
-            <!-- Здесь вы можете добавить логику загрузки содержимого файла и отображения подробного описания -->
         </body>
         </html>
     `;
